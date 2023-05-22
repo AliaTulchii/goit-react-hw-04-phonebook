@@ -46,8 +46,7 @@ import shortid from "shortid";
     };
 
     const validateForm = () => {
-        // const { name, number } = this.state;
-        // const { onCheck } = this.props;
+        
         if (!name || !number) {
             alert('This field empty!');
             return false;
@@ -58,10 +57,7 @@ import shortid from "shortid";
     
     const reset = () => {
         setName('');
-        setNumber('');
-        // this.setState({
-        //     name: ' ',
-        //     number: ' ',  })
+        
 };
     
     

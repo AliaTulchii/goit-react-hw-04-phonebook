@@ -24,25 +24,7 @@ const App=()=>{
     window.localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
 
-//   componentDidMount() {
-//     const contacts = localStorage.getItem('contacts');
-//     if (contacts !== null) {
-//       this.setState({ contacts: JSON.parse(contacts) });
-//     } else {
-//       this.setState({ contacts: initialState });
-//     }
-    
-//  }
 
- 
-//   componentDidUpdate(prevProps,prevState) {
-//     console.log('App did update');
-
-//     if (this.state.contacts !== prevState.contacts) {
-//       console.log('Contacts field is update ');
-//       localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
-//     }
-//   }
 
   const handleAddContact = ({ name, number }) => {
     const person = {
@@ -64,7 +46,7 @@ const App=()=>{
   
 
   const handleCheckContact = (name) => {
-    // const { contacts } = this.state;
+    
 
     const isContact = contacts.find(contact => contact.name === name);
 
@@ -85,7 +67,7 @@ const App=()=>{
  
 
   const getVisibleContacts = () => {
-    // const { contacts, filter } = this.state;
+    
     const normalizedFilter = filter.toLowerCase();
     return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter)
