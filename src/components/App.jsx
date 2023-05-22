@@ -27,10 +27,7 @@ const App=()=>{
 
 
   const handleAddContact = (person) => {
-    // const person = {
-    //   name,
-    //   number,
-    // }
+    
 
     const exist = contacts.find(({ name }) => name === person.name);
 
@@ -45,15 +42,7 @@ const App=()=>{
 
   
 
-  // const handleCheckContact = (name) => {
-    
 
-  //   const isContact = contacts.find(contact => contact.name === name);
-
-  //   isContact && alert('Contact is already found!');
-
-  //   return !isContact;
-  // }
 
   const handleDelete = (id) => {
     setContatcs((prevState) => (prevState.filter(contact => contact.id !== id)))
