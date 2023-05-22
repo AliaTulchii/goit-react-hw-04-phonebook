@@ -52,7 +52,7 @@ import shortid from "shortid";
             return false;
         }
 
-        return onCheck();
+        return true;
     }
     
     const reset = () => {
