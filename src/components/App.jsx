@@ -29,7 +29,7 @@ const App=()=>{
   const handleAddContact = (person) => {
     
 
-    const exist = contacts.find(({ name }) => name === person.name);
+    const exist = contacts.find(contact => contact.name.toLowerCase().trim() === person.name.toLowerCase().trim());
 
     if (exist) {
       alert(`${person.name} is already in contacts list`);
@@ -48,9 +48,8 @@ const App=()=>{
     setContatcs((prevState) => (prevState.filter(contact => contact.id !== id)))
   }
 
-  const handleFilterChange = (filter) => {
-    const { value } = filter.currentTarget;
-    setFilter(value);
+  const handleFilterChange = (e) => {
+    setFilter(e.currentTarget.value);
   }
 
  
@@ -76,7 +75,10 @@ const App=()=>{
         <Form  onAdd={handleAddContact}  />
 
         <h2 className={css.ContactList__titleBlue}>Contacts</h2>
-        <Filter filter={filter} onChange={handleFilterChange}/>
+          <Filter
+            value={filter}
+            onChange={handleFilterChange}
+          />
         <ContactList contacts={visibleContacts} onDelete={handleDelete}/>
         </div>
         

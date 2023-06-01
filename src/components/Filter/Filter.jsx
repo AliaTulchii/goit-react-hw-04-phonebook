@@ -2,13 +2,13 @@ import React from 'react';
 import css from './Filter.module.css'
 import PropTypes from 'prop-types'
 
-const Filter = ({ filter, onChange }) => {
+const Filter = ({ value, onChange }) => {
     return (
         <input
             type='text'
             name='filter'
-            value={filter}
-            onChange={({ target }) => onChange(target.value)}
+            value={value}
+            onChange={ onChange}
             placeholder='Enter name for search'
             className={css.Filter__input}
         />
